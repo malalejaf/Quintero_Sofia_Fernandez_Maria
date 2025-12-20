@@ -1,13 +1,13 @@
 # Análisis de Precios de Medicamentos en Colombia
 
-**Autoras:** Sofia Quintero y Maria Alejandra  
+**Autoras:** Sofia Quintero Hurtado y Maria Alejandra Fernandez  
 **Fecha:** Diciembre 2025
 
 ---
 
 ## Descripción del Proyecto
 
-Este proyecto analiza los precios de medicamentos en Colombia utilizando datos abiertos del Ministerio de Salud y Protección Social. Con el fin de identificar patrones de precios, comparar costos entre diferentes fabricantes y entender la variabilidad de precios de medicamentos con el mismo principio activo.
+Este proyecto analiza los precios de medicamentos en Colombia utilizando datos abiertos del Ministerio de Salud y Protección Social. El objetivo es identificar patrones de precios, comparar costos entre diferentes fabricantes y entender la variabilidad de precios de medicamentos con el mismo principio activo.
 
 ### Preguntas de Investigación
 
@@ -40,3 +40,31 @@ El dataset contiene **12,500 registros** con información sobre precios de medic
 - **precio_por_tableta:** Precio equivalente por unidad
 - **factoresprecio:** Factores que afectan el precio
 - **numerofactor:** Número de dosis
+
+---
+
+## Metodología
+
+### 1. Carga de Datos
+
+Los datos se obtienen directamente desde la API de Datos Abiertos Colombia en formato JSON utilizando **Pandas** y SORA3:
+
+```python
+import pandas as pd
+import requests
+
+url = "https://www.datos.gov.co/api/v3/views/3t73-n4q9/query.json"
+response = requests.get(url)
+data = response.json()
+df = pd.json_normalize(data)
+```
+
+### 2. Limpieza de Datos (Pandas + NumPy)
+
+Se aplicaron las siguientes técnicas de limpieza:
+
+- **Manejo de valores nulos:** Eliminación de registros con precios faltantes e imputación de valores categóricos
+- **Eliminación de datos atípicos:** Identificación mediante método IQR y boxplots
+- **Normalización:** Estandarización de nombres de fabricantes y principios activos
+- **Transformación de columnas:** Conversión de precios a formato numérico
+- **Filtrado:** Selección de medicamentos orales (tabletas y cápsulas)
