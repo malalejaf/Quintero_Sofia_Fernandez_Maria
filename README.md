@@ -23,7 +23,7 @@ Este proyecto analiza los precios de medicamentos en Colombia utilizando datos a
 - **Nombre del conjunto de datos:** Precios Medicamentos - Termómetro de Precios
 - **Plataforma:** Datos Abiertos Colombia
 - **URL del dataset:** https://www.datos.gov.co/api/v3/views/3t73-n4q9/query.json
-- **Fecha de descarga:** Enero 2025
+- **Fecha de descarga:** Diciembre 2025
 - **Última actualización:** 30 de enero de 2025
 - **Suministrado por:** Ministerio de Salud y Protección Social
 
