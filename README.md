@@ -1,6 +1,6 @@
 # Análisis de Precios de Medicamentos en Colombia
 
-**Autoras:** Sofia Quintero Hurtado y Maria Alejandra Fernandez  
+**Autoras:** Sofia Quintero Hurtado y Maria Alejandra Fernandez
 **Fecha:** Diciembre 2025
 
 ---
@@ -47,17 +47,7 @@ El dataset contiene **12,500 registros** con información sobre precios de medic
 
 ### 1. Carga de Datos
 
-Los datos se obtienen directamente desde la API de Datos Abiertos Colombia en formato JSON utilizando **Pandas** y SODA3:
-
-```python
-import pandas as pd
-import requests
-
-url = "https://www.datos.gov.co/api/v3/views/3t73-n4q9/query.json"
-response = requests.get(url)
-data = response.json()
-df = pd.json_normalize(data)
-```
+Los datos se obtienen directamente desde la API de Datos Abiertos Colombia en formato SODA3 JSON utilizando **Pandas**:
 
 ### 2. Limpieza de Datos (Pandas + NumPy)
 
@@ -68,3 +58,32 @@ Se aplicaron las siguientes técnicas de limpieza:
 - **Normalización:** Estandarización de nombres de fabricantes y principios activos
 - **Transformación de columnas:** Conversión de precios a formato numérico
 - **Filtrado:** Selección de medicamentos orales (tabletas y cápsulas)
+
+### 3. Análisis Estadístico
+
+**Medidas de Tendencia Central:**
+- Media de precios por tableta
+- Mediana de precios (medida más robusta)
+- Moda de principios activos más frecuentes
+
+**Medidas de Dispersión:**
+- Varianza y desviación estándar de precios
+- Rango intercuartílico
+- Coeficiente de variación por principio activo
+
+**Análisis Adicional:**
+- Tablas de frecuencias de fabricantes y principios activos
+- Cálculo de porcentajes por categoría
+- Correlación entre concentración y precio
+- Comparación de precios entre fabricantes
+
+### 4. Visualizaciones (Matplotlib + Seaborn)
+
+Se crearon las siguientes graficas:
+
+1. **Histograma:** Distribución de precios por tableta
+2. **Boxplot:** Comparación de precios entre fabricantes principales
+3. **Gráfico de barras:** Top 10 principios activos más caros
+4. **Heatmap:** Correlación entre variables numéricas
+5. **Gráfico de barras horizontal:** Medicamentos más económicos vs más costosos
+6. **Violinplot:** Distribución de precios por unidad de dispensación
