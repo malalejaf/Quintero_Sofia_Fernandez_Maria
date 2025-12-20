@@ -47,7 +47,7 @@ El dataset contiene **12,500 registros** con información sobre precios de medic
 
 ### 1. Carga de Datos
 
-Los datos se obtienen directamente desde la API de Datos Abiertos Colombia en formato JSON utilizando **Pandas** y SORA3:
+Los datos se obtienen directamente desde la API de Datos Abiertos Colombia en formato JSON utilizando **Pandas** y SODA3:
 
 ```python
 import pandas as pd
