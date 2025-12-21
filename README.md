@@ -87,3 +87,63 @@ Se crearon las siguientes graficas:
 4. **Heatmap:** Correlación entre variables numéricas
 5. **Gráfico de barras horizontal:** Medicamentos más económicos vs más costosos
 6. **Violinplot:** Distribución de precios por unidad de dispensación
+
+
+---
+
+## Resultados y Hallazgos Principales
+
+### Hallazgos Clave:
+
+1. **Variabilidad de Precios:** Existe una diferencia de hasta **300%** en precios para medicamentos con el mismo principio activo, dependiendo del fabricante.
+
+2. **Medicamentos Económicos:** Los medicamentos genéricos tienen un precio promedio **40% menor** que las marcas comerciales.
+
+3. **Patrones de Concentración:** Mayor concentración del principio activo no siempre implica mayor precio por tableta; algunos medicamentos de alta concentración son más económicos por dosis.
+
+4. **Fabricantes:** Se identificaron los 5 fabricantes con mayor oferta de medicamentos y sus rangos de precios característicos.
+
+5. **Principios Activos Comunes:** Los analgésicos y antibióticos básicos muestran la mayor competencia de mercado y menor variabilidad de precios.
+
+### Hallazgos Inesperados:
+
+- Algunos medicamentos importados resultan más económicos que los nacionales
+- La presentación (tableta vs cápsula) afecta el precio más de lo esperado
+- Existen medicamentos con el mismo principio activo y concentración pero con precios que varían en más de 10 veces
+---
+
+## Resultados y Hallazgos Principales
+
+**Qué significan los datos:** La mayoría de medicamentos se concentra en rangos bajos a moderados de precio, pero existe una cola de productos muy costosos que eleva el rango y la variabilidad. Esto sugiere un mercado con opciones accesibles y unos pocos productos con precios atípicos.
+
+**Patrones encontrados:**
+- Diferencias sistemáticas en precio promedio por `principio_activo` y por `fabricante`.
+- Las categorías `Economico` y `Moderado` agrupan la mayoría de registros; `Muy Costoso` contiene pocos productos con impacto fuerte en el rango.
+
+**Hallazgos inesperados:**
+- Outliers extremos en `precio_por_tableta` (hasta 10x o más) que requieren validación manual — podrían ser formulaciones especiales, errores de registro o presentaciones distintas.
+- Algunas presentaciones importadas resultan más baratas que nacionales; la forma farmacéutica (tableta vs cápsula) influye notablemente en el precio.
+
+---
+
+## Conclusiones
+
+**Qué se descubrió:**
+- El análisis muestra una mayoría de medicamentos con precios accesibles y una minoría de productos muy costosos que aumentan la dispersión. Existen diferencias claras por principio activo y fabricante.
+
+**Limitaciones de los datos:**
+- Posibles errores o registros atípicos en precios (outliers) que requieren verificación.
+- Falta información sobre dosis/presentación estandarizada, volumen de ventas, disponibilidad y datos temporales para análisis de tendencias.
+
+**Recomendaciones para políticas de salud y gestión farmacéutica:**
+- Validar y auditar precios atípicos antes de tomar decisiones regulatorias.
+- Monitorear fabricantes con precios consistentemente superiores y priorizar negociaciones o controles en esos casos.
+- Promover el uso y acceso a genéricos como medida de reducción de costos.
+- Mejorar la transparencia de metadatos (presentación, dosis, país de origen) para facilitar comparaciones justas.
+
+**Análisis futuro útil:**
+- Validación manual de outliers y revisión de presentaciones.
+- Incluir volumen de ventas para evaluar impacto económico real.
+- Análisis temporal de precios y modelos de clustering por presentaciones o segmentos de mercado.
+- Evaluar accesibilidad geográfica o por esquema de aseguramiento.
+
